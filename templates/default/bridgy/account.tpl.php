@@ -23,32 +23,6 @@
 <div class="row" id="account-area">
 
         <div class="col-md-6 col-md-offset-1">
-        <?php if ($vars['facebook_enabled']) { ?>
-            <form action="https://www.brid.gy/delete/start" method="post">
-            <input type="hidden" name="feature" value="listen" />
-            <input type="hidden" name="key" value="<?php echo $vars['facebook_key']?>" />
-            <input type="hidden" name="callback" value="<?php echo \Idno\Core\Idno::site()->config()->getDisplayURL() . 'account/bridgy/disabled/?service=facebook'?>" />
-            <p>
-                <button class="connect fb connected"><?php echo \Idno\Core\Idno::site()->language()->_('Facebook + Bridgy connected'); ?></button>
-            </p>
-            <p>
-                <?php echo \Idno\Core\Idno::site()->language()->_('Bridgy is pulling in comments and likes from Facebook. Click to disable.'); ?>
-            </p>
-        </form>
-        <?php } else { ?>
-        <form action="https://www.brid.gy/facebook/start" method="post">
-            <input type="hidden" name="feature" value="listen" />
-            <input type="hidden" name="callback" value="<?php echo \Idno\Core\Idno::site()->config()->getDisplayURL() . 'account/bridgy/enabled/?service=facebook'?>" />
-            <input type="hidden" name="user_url" value="<?php echo \Idno\Core\Idno::site()->config()->getDisplayURL()?>" />
-            <p>
-                <button class="connect fb"><?php echo \Idno\Core\Idno::site()->language()->_('Activate Facebook + Bridgy'); ?></button>
-            </p>
-            <p>
-                <?php echo \Idno\Core\Idno::site()->language()->_('Bridgy pulls in comments and likes from Facebook.'); ?>
-            </p>
-        </form>
-        <?php } ?>
-
         <?php if ($vars['twitter_enabled']) { ?>
         <form action="https://www.brid.gy/delete/start" method="post">
             <input type="hidden" name="feature" value="listen" />
